@@ -35,11 +35,11 @@ public class PreditorPlacar {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("\n🎯 Selecione um jogo do Campeonato Brasileiro 2025 para fazer a predição:");
+        System.out.println("\n Selecione um jogo do Campeonato Brasileiro 2025 para fazer a predição:");
         for (int i = 0; i < jogos.size(); i++) {
             System.out.println("[" + (i + 1) + "] " + jogos.get(i).getTimeCasa() + " x " + jogos.get(i).getTimeFora());
         }
-        System.out.print("\nDigite o número do jogo: ");
+        System.out.print("\n Digite o número do jogo: ");
         int opcao = scanner.nextInt();
         scanner.close();
 
@@ -53,7 +53,7 @@ public class PreditorPlacar {
         String nomeNormalizadoCasa = normalizarNomeTime(jogoSelecionado.getTimeCasa());
         String nomeNormalizadoFora = normalizarNomeTime(jogoSelecionado.getTimeFora());
 
-        System.out.println("\nBuscando IDs dos times no Brasileirão 2025...");
+        System.out.println("\n Buscando IDs dos times no Brasileirão 2025...");
         Integer idTimeCasa = buscarIdTimeNoBrasileirao2025(nomeNormalizadoCasa);
         Integer idTimeFora = buscarIdTimeNoBrasileirao2025(nomeNormalizadoFora);
 
@@ -62,7 +62,7 @@ public class PreditorPlacar {
             return;
         }
 
-        System.out.println("\nCalculando confrontos diretos...");
+        System.out.println("\n Calculando confrontos diretos...");
         buscarConfrontosDiretos(idTimeCasa, idTimeFora);
     }
 
@@ -130,7 +130,7 @@ public class PreditorPlacar {
 
                     if (normalizarNomeTime(nomeApi).equalsIgnoreCase(nomeTime)) {
                         int id = teamObj.get("id").getAsInt();
-                        System.out.println("✅ Time encontrado: " + nomeApi + " | ID: " + id);
+                        System.out.println(" Time encontrado: " + nomeApi + " | ID: " + id);
                         return id;
                     }
                 }
@@ -196,17 +196,17 @@ public class PreditorPlacar {
                     jogosAnalisados++;
                 }
 
-                System.out.println("\n🔎 Confrontos analisados nos últimos 10 anos: " + jogosAnalisados);
-                System.out.println("🏠 Vitórias do time da casa: " + vitoriasCasa);
-                System.out.println("🤝 Empates: " + empates);
-                System.out.println("🛫 Vitórias do time visitante: " + vitoriasFora);
+                System.out.println("\n Confrontos analisados nos últimos 10 anos: " + jogosAnalisados);
+                System.out.println(" Vitórias do time da casa: " + vitoriasCasa);
+                System.out.println(" Empates: " + empates);
+                System.out.println(" Vitórias do time visitante: " + vitoriasFora);
 
                 if (jogosAnalisados > 0) {
                     double pctCasa = (vitoriasCasa * 100.0) / jogosAnalisados;
                     double pctEmpate = (empates * 100.0) / jogosAnalisados;
                     double pctFora = (vitoriasFora * 100.0) / jogosAnalisados;
 
-                    System.out.printf("\n🔮 Predição:%n");
+                    System.out.printf("\n Predição:%n");
                     System.out.printf("- Casa vence: %.2f%%%n", pctCasa);
                     System.out.printf("- Empate: %.2f%%%n", pctEmpate);
                     System.out.printf("- Visitante vence: %.2f%%%n", pctFora);
@@ -235,20 +235,3 @@ public class PreditorPlacar {
     }
 }
 
-class Jogo {
-    private String timeCasa;
-    private String timeFora;
-
-    public Jogo(String timeCasa, String timeFora) {
-        this.timeCasa = timeCasa;
-        this.timeFora = timeFora;
-    }
-
-    public String getTimeCasa() {
-        return timeCasa;
-    }
-
-    public String getTimeFora() {
-        return timeFora;
-    }
-}
