@@ -19,8 +19,8 @@ public class ClienteApiFutebol {
 
     public static void main(String[] args) {
         // Exemplo - substitua por times vindos do ClienteApi
-        String nomeTimeCasa = "Udinese";
-        String nomeTimeFora = "Bologna";
+        String nomeTimeCasa = "Palmeiras";
+        String nomeTimeFora = "Corinthians";
 
         buscarPredicaoEntreTimes(nomeTimeCasa, nomeTimeFora);
     }
@@ -129,17 +129,17 @@ public class ClienteApiFutebol {
                     jogosAnalisados++;
                 }
 
-                System.out.println("\n🔎 Confrontos analisados nos últimos 10 anos: " + jogosAnalisados);
-                System.out.println("🏠 Vitórias do time da casa: " + vitoriasCasa);
-                System.out.println("🤝 Empates: " + empates);
-                System.out.println("🛫 Vitórias do time visitante: " + vitoriasFora);
+                System.out.println("\n Confrontos analisados nos últimos 10 anos: " + jogosAnalisados);
+                System.out.println(" Vitórias do time da casa: " + vitoriasCasa);
+                System.out.println(" Empates: " + empates);
+                System.out.println(" Vitórias do time visitante: " + vitoriasFora);
 
                 if (jogosAnalisados > 0) {
                     double pctCasa = (vitoriasCasa * 100.0) / jogosAnalisados;
                     double pctEmpate = (empates * 100.0) / jogosAnalisados;
                     double pctFora = (vitoriasFora * 100.0) / jogosAnalisados;
 
-                    System.out.printf("\n🔮 Predição:%n");
+                    System.out.printf("\n Predição:%n");
                     System.out.printf("- Casa vence: %.2f%%%n", pctCasa);
                     System.out.printf("- Empate: %.2f%%%n", pctEmpate);
                     System.out.printf("- Visitante vence: %.2f%%%n", pctFora);
