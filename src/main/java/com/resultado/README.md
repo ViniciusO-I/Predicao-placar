@@ -1,4 +1,4 @@
-# Predição de Placar ⚽️🇧🇷
+# Predição de Placar 
 
 Projeto Java que consome APIs de futebol para:
 - Listar jogos do Campeonato Brasileiro Série A 2025
