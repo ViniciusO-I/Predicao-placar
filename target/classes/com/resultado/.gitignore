@@ -1,0 +1,15 @@
+# Ignorar pasta de builds do Maven
+/target/
+
+# Ignorar arquivos de sistema
+*.log
+*.class
+*.jar
+
+# Ignorar configurações de IDEs
+.vscode/
+.idea/
+*.iml
+
+# Ignorar variáveis de ambiente
+.env
